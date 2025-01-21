@@ -20,6 +20,7 @@ namespace WpfApp1
     public partial class MainWindow : Window
     {
         string ans="\0";
+        JsonSerializerOptions options = new JsonSerializerOptions { WriteIndented = true };
         public MainWindow()
         {
             
@@ -34,9 +35,8 @@ namespace WpfApp1
             textbox1.TextChanged -= TextBox_TextChanged;
 
             //change of text
-            string s = JsonSerializer.Serialize(button1.Content);
-            string tmp1 = s.Trim('"');
-            textbox1.Text += tmp1;
+
+            textbox1.Text += button1.Content.ToString();
 
             //changed string
             ans += textbox1.Text;
@@ -49,9 +49,7 @@ namespace WpfApp1
             textbox1.TextChanged -= TextBox_TextChanged;
 
             //change of text
-            string s = JsonSerializer.Serialize(add.Content);
-            string tmp1 = s.Trim('"');
-            textbox1.Text += tmp1;
+            textbox1.Text += add.Content.ToString();
 
             //changed string
             ans += textbox1.Text;
@@ -64,9 +62,8 @@ namespace WpfApp1
             textbox1.TextChanged -= TextBox_TextChanged;
 
             //change of text
-            string s = JsonSerializer.Serialize(sub.Content);
-            string tmp1 = s.Trim('"');
-            textbox1.Text += tmp1;
+            
+            textbox1.Text += sub.Content.ToString();
 
             //changed string
             ans += textbox1.Text;
@@ -79,9 +76,7 @@ namespace WpfApp1
             textbox1.TextChanged -= TextBox_TextChanged;
 
             //change of text
-            string s = JsonSerializer.Serialize(mul.Content);
-            string tmp1 = s.Trim('"');
-            textbox1.Text += tmp1;
+            textbox1.Text += mul.Content.ToString();
 
             //changed string
             ans += textbox1.Text;
@@ -95,9 +90,7 @@ namespace WpfApp1
             textbox1.TextChanged -= TextBox_TextChanged;
 
             //change of text
-            string s = JsonSerializer.Serialize(div.Content);
-            string tmp1 = s.Trim('"');
-            textbox1.Text += tmp1;
+            textbox1.Text += div.Content.ToString();
 
             //changed string
             ans += textbox1.Text;
@@ -111,9 +104,7 @@ namespace WpfApp1
             textbox1.TextChanged -= TextBox_TextChanged;
 
             //change of text
-            string s = JsonSerializer.Serialize(equal.Content);
-            string tmp1 = s.Trim('"');
-            textbox1.Text += tmp1;
+            textbox1.Text += equal.Content.ToString();
 
             //changed string
             ans += textbox1.Text;
